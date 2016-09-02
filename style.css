@@ -18,16 +18,34 @@ body{
 }
 
 span{
-  color: rgb(245, 156, 53)
+  color: rgb(223, 127, 17)
 }
 
 input[type=search] {
   font-size: 18px;
   border: 0;
-  width: 80%;
   padding: 5px;
+  width: 70%;
 }
 
-li {
-  color: white
+.resultsList{
+  margin: 40px auto;
+  width: 70%;
+}
+.result{
+  background-color: white;
+  color: rgb(36, 36, 36);
+  border-left: solid 5px rgb(223, 127, 17);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;;
+  margin-top: 8px;
+}
+.result:hover {
+  background-color: rgba(223, 127, 17, 0.58)
+}
+.avatar{
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px 15px;
 }

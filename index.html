@@ -19,19 +19,22 @@
         <!--Input-->
         <input type="search" ng-model="searchString" ng-change="search()" placeholder="Search Keyword or Author"/>
       </div>
-        <ul>
-      		<!-- Render a li element for every entry in the items array. Notice
-      				 the custom search filter "searchFor". It takes the value of the
-      				 searchString model as an argument.
-      			 -->
-      		<li ng-repeat="result in results">
-            <p>{{result.full_name}}<p>
-      		</li>
-      	</ul>
-      <div>
 
+      <!-- Render a div for each result,  -->
+      <div class="resultsList">
+        <div ng-repeat="result in results">
+          <!--initial div-->
+          <div class="result"> ng-click="$parent.expand(result.full_name)">
+            <img class="avatar" ng-src="{{result.owner.avatar_url}}"/>
+            <div class="repoFullName"><h2>{{result.full_name}}</h2></div>
+          </div>
+          <!-- Expanded details-->
+          <div>
+          </div>
+        </div>
       </div>
     </div>
+
     <!--Scripts-->
     <script src="app.js"></script>
   </body>
