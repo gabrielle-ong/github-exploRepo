@@ -1,0 +1,29 @@
+body{
+  background-image: url("congruent_outline.png");
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#instructions{
+  color: rgba(55, 246, 229, 0.9)
+}
+#gif {
+  border-radius: 50%;
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  margin: 30px auto 0px auto;
+}
+
+span{
+  color: rgb(245, 156, 53)
+}
+
+input[type=search] {
+  font-size: 18px;
+  border: 0;
+  width: 80%;
+  padding: 5px;
+}
