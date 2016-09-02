@@ -3,11 +3,10 @@ angular.module('repoApp', [])
     $scope.search = function () {
       $http.get('https://api.github.com/search/repositories?q=' + $scope.searchString)
         .success(function (data) {
-          console.log(data.total_count)
           $scope.results = data.items
         })
         .error(function (data) {
-          console.log('No repos found..')
+          $scope.searchErrorMessage='No repos found...'
         })
     }
 
@@ -21,14 +20,14 @@ angular.module('repoApp', [])
           console.log(data.html_url)
         })
         .error(function (data) {watchers
-          console.log('Could not get detailed repo data')
+          console.log('Could not get repo details')
         })
         $http.get('https://api.github.com/repos/' + repoFullName + '/languages')
           .success(function (data) {
             console.log(data)
           })
           .error(function (data) {
-            console.log('Could not get languages')
+            console.log('Could not get repo languages')
           })
     }
   })

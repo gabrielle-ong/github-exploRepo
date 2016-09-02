@@ -22,14 +22,27 @@ span{
 }
 
 input[type=search] {
-  font-size: 18px;
+  font-size: 18px;;
   border: 0;
   padding: 5px;
-  width: 70%;
+  width: 60%;
 }
-
+#searchButton {
+  background-color: rgba(55, 246, 229, 0.9);
+  font-size: 18px;
+  padding: 5px 16px;
+  border:0;
+}
+input:focus {
+    outline: none; /* overrides chrome default focus outline */
+}
+#searchErrorMessage{
+  font-size: 14px;
+  margin-top:10px;
+  color: white;
+}
 .resultsList{
-  margin: 40px auto;
+  margin: 80px auto;
   width: 70%;
 }
 .result{
@@ -48,4 +61,12 @@ input[type=search] {
   height: 60px;
   border-radius: 50%;
   margin: 10px 15px;
+}
+.repoFullName {
+  font-size: 30px;
+}
+@media only screen and (max-width: 768px){
+  .resultsList{
+    width: 100%;
+  }
 }
