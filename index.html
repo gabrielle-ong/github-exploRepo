@@ -17,15 +17,15 @@
         <h1>GITHUB EXPLO<span>REPO</span></h1>
         <h2>Explore Repos by Keyword or Author</h2>
         <!--Input-->
-        <input type="search" ng-model="searchString" placeholder="Search Keyword or Author"/>
+        <input type="search" ng-model="searchString" ng-change="search()" placeholder="Search Keyword or Author"/>
       </div>
         <ul>
       		<!-- Render a li element for every entry in the items array. Notice
       				 the custom search filter "searchFor". It takes the value of the
       				 searchString model as an argument.
       			 -->
-      		<li ng-repeat="i in results">
-      			<p>{{i}}</p>
+      		<li ng-repeat="result in results">
+            <p>{{result.full_name}}<p>
       		</li>
       	</ul>
       <div>
