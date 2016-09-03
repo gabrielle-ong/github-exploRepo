@@ -48,14 +48,14 @@ input:focus {
 .result{
   background-color: white;
   color: rgb(36, 36, 36);
-  border-left: solid 5px rgb(223, 127, 17);
+  border-left: solid 8px rgba(4, 217, 198, 0.9);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;;
   margin-top: 8px;
 }
 .result:hover {
-  background-color: rgba(223, 127, 17, 0.58)
+  background-color: rgba(0, 247, 225, 0.60)
 }
 .avatar{
   height: 60px;

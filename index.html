@@ -33,11 +33,23 @@
             <img class="avatar" ng-src="{{result.owner.avatar_url}}"/>
             <div><h2>{{result.full_name}}</h2></div>
           </div>
+
           <!-- Expanded details-->
           <div>
+            <!-- text details -->
+            <div>
+              <!-- url -->
+              <h3>{{result.html_url}}</h3>
+              <!-- descriptions -->
+              <h3>{{result.description}}</h3>
+              <h3>{{result.watchers_count}}</h3>
+            </div>
 
+            <!-- language chart -->
+            <div>
+              <h2>{{language}}
+            </div>
           </div>
-        </div>
       </div>
     </div>
 
