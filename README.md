@@ -30,7 +30,7 @@ Return repo watchers instead of 'followers' as given in the task. Users have fol
     - Added search by author functionality + error handling
 0. Added this readme + prevent resizing on mobile
 
-## Bugs to fix
+## Bugs to fix (feedback from testers aka friends)
 [ ] previous results show if new search term doesn't yield results    
 [ ] limit languages to 4, else text will overrun the doughnut chart    
 [ ] github links should open in new tab    
