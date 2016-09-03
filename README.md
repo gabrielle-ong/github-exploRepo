@@ -30,13 +30,17 @@ Return repo watchers instead of 'followers' as given in the task. Users have fol
     - Added search by author functionality + error handling
 0. Added this readme + prevent resizing on mobile
 
-## Bugs to fix (feedback from testers aka friends)
-[ ] previous results show if new search term doesn't yield results    
-[ ] limit languages to 4, else text will overrun the doughnut chart    
-[ ] github links should open in new tab    
+## Post MVP Bugs to fix (feedback from testers aka friends)
+[x] previous results show if new search term doesn't yield results    
+[X] limit languages to 4, else text will overrun the doughnut chart    
+[X] github links should open in new tab    
 [X] prevent users from scaling in mobile     
-[ ] down arrow animation when results appear. Else it's not intuitive to scroll down.    
-[ ] (Bonus feature) specific colors to specific languages, rather than same colors regardless of language. Because people recognize color better than the text)   
+[X] cue ('Top X results') when results appear. Else it's not intuitive to scroll down.    
+
+## Limitations
+- github API returns 30 results. If want more, have to do traversing with pagination https://developer.github.com/guides/traversing-with-pagination/
+- currently its the same 4 colors for the language chart, would be better if each language had a specific color for people to recognize (but will have to hardcode languages to a color)
+
 
 ## Things I want improve at:
 - Testing. I've tried Capybera for Ruby but I'm not familiar with testing for Node front end. So I decided to shelve it to my 'things to learn' list after I complete this assignment. Will explore Selenium/Zombie/PhantomJS/CasperJS

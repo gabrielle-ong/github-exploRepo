@@ -17,13 +17,13 @@
   </head>
   <body ng-app="repoApp">
     <div ng-controller="Ctrl">
-      <div id="instructions">
+      <div class="instructions">
         <!--Image-->
-        <img id="gif" src="octocat.gif" alt="This will display an animated GIF" />
+        <img id="gif" src="octocat.jpg" alt="This will display an image" />
         <h1>GITHUB EXPLO<span>REPO</span></h1>
         <h2>Explore Repos by Keywords or User</h2>
         <!--Search form-->
-          <input type="search" ng-model="searchString" placeholder="Enter to search"/>
+          <input type="search" ng-model="searchString" placeholder="Search..."/>
           <div id="searchButtons">
             <input class="searchButton" type="submit" value="Search Keywords" ng-click="searchKeywords()"/>
             <input class="searchButton" type="submit" value="Search Author" ng-click="searchAuthor()"/>
@@ -31,6 +31,7 @@
         <div id="searchErrorMessage">{{searchErrorMessage}}
         </div>
       </div>
+      <h3 class="instructions"> {{noOfResults}}</h3>
       <!-- Render a div for each result,  -->
       <div class="resultsListDiv">
         <div ng-repeat="result in results">
@@ -50,7 +51,7 @@
             <!-- text details -->
             <div class="textDetailsDiv">
               <!-- url -->
-              <h3><a ng-href="{{result.html_url}}">{{result.html_url}}</a></h3>
+              <h3><a ng-href="{{result.html_url}}" target="_blank">{{result.html_url}}</a></h3>
               <!-- descriptions -->
               <h3>{{result.description || "No Description"}}</h3>
               <h3><i class="fa fa-eye" aria-hidden="true"></i>  {{result.watchers_count}}</h3>
