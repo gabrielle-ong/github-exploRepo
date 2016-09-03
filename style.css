@@ -6,19 +6,19 @@ body{
   text-align: center;
 }
 
-#instructions{
-  color: rgba(55, 246, 229, 0.9)
+.instructions{
+  color: #ffdac6
 }
 #gif {
   border-radius: 50%;
   background-color: white;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   margin: 30px auto 0px auto;
 }
 
 span{
-  color: rgb(223, 127, 17)
+  color: rgba(134, 221, 99, 1)
 }
 
 input:focus {
@@ -28,7 +28,7 @@ input[type=search] {
   font-size: 18px;;
   border: 0;
   padding: 5px;
-  width: 60%;
+  width: 70%;
 }
 #searchButtons {
   display: flex;
@@ -37,7 +37,7 @@ input[type=search] {
   width: 100%;
 }
 #searchButtons > input {
-  background-color: rgb(223, 127, 17);
+  background-color: rgba(134, 221, 99, 1);
   font-size: 16px;
   padding: 5px 16px;
   border:0;
@@ -50,7 +50,7 @@ input[type=search] {
   color: white;
 }
 .resultsListDiv{
-  margin: 80px auto;
+  margin: 20px auto;
   width: 70%;
 }
 @media only screen and (max-width: 768px){
@@ -71,11 +71,11 @@ input[type=search] {
 }
 .resultDiv{
   color: rgb(36, 36, 36);
-  border-left: solid 8px rgba(4, 217, 198, 0.9);
+  border-left: solid 8px rgba(134, 221, 99, 1);
   margin-top: 12px;
 }
 .resultDiv:hover {
-  background-color: rgba(0, 247, 225, 0.60)
+  background-color: rgba(134, 221, 99, 0.87)
 }
 .avatar{
   height: 60px;
@@ -83,7 +83,7 @@ input[type=search] {
   margin: 10px 15px;
 }
 .expandedDetailsDiv{
-  border-left: 8px solid rgb(251, 134, 0);
+  border-left: 8px solid #ffdac6;
   border-top: 3px solid rgb(213, 213, 213)
 }
 .textDetailsDiv{
