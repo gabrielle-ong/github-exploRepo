@@ -21,6 +21,9 @@ span{
   color: rgb(223, 127, 17)
 }
 
+input:focus {
+  outline: none; /* overrides chrome default focus outline */
+}
 input[type=search] {
   font-size: 18px;;
   border: 0;
@@ -33,28 +36,34 @@ input[type=search] {
   padding: 5px 16px;
   border:0;
 }
-input:focus {
-    outline: none; /* overrides chrome default focus outline */
-}
 #searchErrorMessage{
   font-size: 14px;
   margin-top:10px;
   color: white;
 }
-.resultsList{
+
+.resultsListDiv{
   margin: 80px auto;
   width: 70%;
 }
-.result{
-  background-color: white;
-  color: rgb(36, 36, 36);
-  border-left: solid 8px rgba(4, 217, 198, 0.9);
+@media only screen and (max-width: 768px){
+  .resultsListDiv{
+    width: 100%;
+  }
+}
+.resultDiv, .expandedDetailsDiv {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;;
-  margin-top: 8px;
+  justify-content: flex-start;
+  background-color: white;
+  align-items: center;
 }
-.result:hover {
+.resultDiv{
+  color: rgb(36, 36, 36);
+  border-left: solid 8px rgba(4, 217, 198, 0.9);
+  margin-top: 12px;
+}
+.resultDiv:hover {
   background-color: rgba(0, 247, 225, 0.60)
 }
 .avatar{
@@ -62,11 +71,29 @@ input:focus {
   border-radius: 50%;
   margin: 10px 15px;
 }
-.repoFullName {
-  font-size: 30px;
+.expandedDetailsDiv{
+  border-left: 8px solid rgb(251, 134, 0);
+  border-top: 3px solid rgb(213, 213, 213)
 }
-@media only screen and (max-width: 768px){
-  .resultsList{
-    width: 100%;
-  }
+.textDetailsDiv{
+  padding: 0 10px;
+  text-align: left;
+  min-height: 130px;
+  position: relative;
+}
+.textDetailsDiv > h3{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+}
+.resultDiv > div, .textDetailsDiv {
+  word-break: break-all;
+}
+.languageChart{
+  height: 150px;
+  width: 150px;
+  text-align: right;
+}
+svg {
+  width: 150px;
+  margin-left: -50%;
 }

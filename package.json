@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/gabrielle-ong/github-exploRepo/issues"
   },
-  "homepage": "https://github.com/gabrielle-ong/github-exploRepo#readme"
+  "homepage": "https://github.com/gabrielle-ong/github-exploRepo#readme",
+  "dependencies": {}
 }
