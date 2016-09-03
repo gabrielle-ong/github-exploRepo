@@ -41,6 +41,9 @@ Return repo watchers instead of 'followers' as given in the task. Users have fol
 - github API returns 30 results. If want more, have to do traversing with pagination https://developer.github.com/guides/traversing-with-pagination/
 - currently its the same 4 colors for the language chart, would be better if each language had a specific color for people to recognize (but will have to hardcode languages to a color)
 
+## Future Extensions:
+- Order by (date, no of watchers)
+- Filter (language)
 
 ## Things I want improve at:
 - Testing. I've tried Capybera for Ruby but I'm not familiar with testing for Node front end. So I decided to shelve it to my 'things to learn' list after I complete this assignment. Will explore Selenium/Zombie/PhantomJS/CasperJS
