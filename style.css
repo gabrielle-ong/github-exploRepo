@@ -30,18 +30,25 @@ input[type=search] {
   padding: 5px;
   width: 60%;
 }
-#searchButton {
-  background-color: rgba(55, 246, 229, 0.9);
-  font-size: 18px;
+#searchButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+#searchButtons > input {
+  background-color: rgb(223, 127, 17);
+  font-size: 16px;
   padding: 5px 16px;
   border:0;
+  width: 160px;
+  margin: 15px
 }
 #searchErrorMessage{
   font-size: 14px;
   margin-top:10px;
   color: white;
 }
-
 .resultsListDiv{
   margin: 80px auto;
   width: 70%;
@@ -50,6 +57,10 @@ input[type=search] {
   .resultsListDiv{
     width: 100%;
   }
+  input[type=search] {
+    width: 90%;
+  }
+
 }
 .resultDiv, .expandedDetailsDiv {
   display: flex;
@@ -90,10 +101,12 @@ input[type=search] {
 }
 .languageChart{
   height: 150px;
-  width: 150px;
-  text-align: right;
+  min-width: 170px;
+  text-align: center;
+}
+.languageChart > h3{
+  padding: 10px;
 }
 svg {
-  width: 150px;
-  margin-left: -50%;
+  min-width: 150px;
 }

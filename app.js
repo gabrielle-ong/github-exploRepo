@@ -2,7 +2,8 @@
 
 angular.module('repoApp', ['n3-pie-chart'])
   .controller('Ctrl', function ($scope, $http) {
-    $scope.search = function () {
+    $scope.searchKeywords = function () {
+      console.log('searchKeyword was clicked!')
       // Error: if no search term entered
       if (!$scope.searchString) {
         $scope.searchErrorMessage = 'Please enter a Search Term'
@@ -23,18 +24,42 @@ angular.module('repoApp', ['n3-pie-chart'])
           })
       }
     }
+    $scope.searchAuthor = function () {
+      console.log('searchAuthor was clicked!')
+      // Error: if no search term entered
+      if (!$scope.searchString) {
+        $scope.searchErrorMessage = 'Please enter a Search Term'
+      }else {
+        // else: query Github API
+        $http.get('https://api.github.com/users/' + $scope.searchString + '/repos')
+          .success(function (data) {
+            console.log(data.length)
+            // Error: if no repos found
+            if (data.length == 0) {
+              // will run if I search 'Gabrielle', ie no exact match to a user
+              $scope.searchErrorMessage = 'No such User Found. Please enter another term'
+            }else {
+              $scope.results = data
+            }
+          })
+          .error(function (data) {
+            // will run this if I search 'qwercwscwe' etc because cannot Get a non existant user
+            $scope.searchErrorMessage = 'No such User Found. Please enter another term'
+          })
+      }
+    }
 
-    $scope.expand = function (repoFullName) {
-      $scope.clicked = !$scope.clicked
-      $http.get('https://api.github.com/repos/' + repoFullName + '/languages')
+    $scope.expand = function (result, index) {
+      $scope.results[index].expandDetails = !$scope.results[index].expandDetails
+      $http.get('https://api.github.com/repos/' + result.full_name + '/languages')
         .success(function (data) {
-          console.log(data)
-          // error: if no languages
+          // no languages, show error message
           if (JSON.stringify(data) == '{}') {
-            $scope.languageErrorMessage = 'Repo has no languages'
+            $scope.results[index].languagesAbsent = true
           }
-          // else: show chart
+          // if not empty: show chart
           else {
+            $scope.results[index].languagesPresent = true
             var arr = []
             for (var key in data) {
               // to avoid for loop in for loop to assign colors
@@ -50,12 +75,12 @@ angular.module('repoApp', ['n3-pie-chart'])
                 arr.push({label: key, value: data[key], color: 'rgb(18, 205, 255)'})
               }
             }
-            $scope.data = arr
-            $scope.options = {thickness: 10}
+            $scope.results[index].data = arr
+            $scope.results[index].options = {thickness: 10}
           }
         })
         .error(function (data) {
-          console.log('Could not get repo languages')
+          $scope.results[index].languageError = 'Could not get repo languages'
         })
     }
   })
