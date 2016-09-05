@@ -1,5 +1,6 @@
 # Github-exploRepo
 Built in Angular1 and Node. Front-end app consuming Github API.
+Check it out at http://gabrielle-ong.com/github-exploRepo/
 
 ## Plan:
 Build a repo tracker by keywords/author. Would have been useful in my role as a coding bootcamp teaching assistant, to track students and all their repos OR keep track of homework by a given repo name.
@@ -38,8 +39,8 @@ Return repo watchers instead of 'followers' as given in the task. Users have fol
 [X] cue ('Top X results') when results appear. Else it's not intuitive to scroll down.    
 
 ## Limitations
-- github API returns 30 results. If want more, have to do traversing with pagination https://developer.github.com/guides/traversing-with-pagination/
-- currently its the same 4 colors for the language chart, would be better if each language had a specific color for people to recognize (but will have to hardcode languages to a color)
+- github API returns 30 results. If more results wanted, have to do traversing with pagination https://developer.github.com/guides/traversing-with-pagination/
+- currently its the same 4 colors for the language chart, would be better if each language had a specific color for people to recognize (but will have to hardcode matching languages to a color)
 
 ## Future Extensions:
 - Order by (date, no of watchers)
